@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="demo">
+  <head>
+    <meta charset="utf-8">
+    <title>AngularJS directive demo</title>
+
+    <!-- TODO: Include Angular from Bower components -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../dist/m-loader.css">
+    <link rel="stylesheet" href="demo.css">
+  </head>
+  <body data-ng-view>
+    <div class="container">
+      <h1 class="text-muted">Demo</h1>
+
+      <div class="usage row" data-ng-controller="DemoCtrl">
+        <h4>Simple usage</h4>
+        <pre>&lt;m-loader&gt;&lt;/m-loader&gt;</pre>
+        In your code just do a broadcast with "m-hide" or "m-show" events.
+        <pre>
+          $rootScope.$emit('m-hide');
+          $rootScope.$emit('m-show');
+        </pre>
+        <button ng-click="showLoader()">Show Loader</button>
+        <button ng-click="hideLoader()">Hide Loader</button>
+        <h4>Results</h4>
+        <m-loader></m-loader>
+      </div>
+    </div>
+
+    <script src="../dist/m-loader.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>
